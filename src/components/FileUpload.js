@@ -1,7 +1,7 @@
 import { useState } from "react";
 import axios from 'axios';
 import './FileUpload.css';
-
+import 'dotenv';
 const FileUpload = ({account,provider,contract})=>{
     const [file,setFile]= useState(null);
     const [filename,setFilename]=useState("No file is selected");
@@ -18,8 +18,8 @@ const FileUpload = ({account,provider,contract})=>{
             const resFile = await axios.post(signedUrl.url, formData, 
             {
                 headers: {
-                    pinata_api_key: "4dd7c6b290e78abe338f",
-                    pinata_secret_api_key: "c441467b2c4d9dad27bd170231c76033717b888f482226d85d8e3c1785a03c5f",
+                    pinata_api_key: process.env.pinata_api_key,
+                    pinata_secret_api_key: process.env.pinata_secret_api_key,
                     "Content-Type": "multipart/form-data",
                 },
             });
