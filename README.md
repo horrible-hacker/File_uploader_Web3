@@ -1,4 +1,4 @@
-# Getting Started with Create React App
+# Decentralized File Sharing System
 File sharing system where user can upload files and share it with others.
 ## Frontend
 - React.js is used
